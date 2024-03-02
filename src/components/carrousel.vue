@@ -1,26 +1,26 @@
 <script setup>
 import { ref, onMounted } from "vue" 
-import { projects } from '/stores/dataImg.js'
+import { projects } from "../stores/dataImg.js"
 
 const dataTable = ref(projects)
 
 const visibleProjects = ref([])
 const startIndex = ref(0)
-const endIndex = ref(1)
+const endIndex = ref(0)
 
 onMounted(() => {
     visibleProjects.value = projects.slice(startIndex.value, endIndex.value + 1)
 })
 
 function click() {
-  startIndex.value = (startIndex.value + 2) % projects.length
+  startIndex.value = (startIndex.value + 1) % projects.length
   endIndex.value = (startIndex.value + 1) % projects.length
 
   if (endIndex.value >= projects.length) {
     endIndex.value  =  0
   }
 
-  visibleProjects.value = [projects[startIndex.value], projects[endIndex.value]]
+  visibleProjects.value = [projects[startIndex.value]]
 }
 
 
@@ -28,16 +28,17 @@ function click() {
 
 
 <template>
-    <section id="projets">
+    <section >
         <h1>Mes projets</h1>
         <article>
             <div id="arrow">
                 <button id="previous" @click="click" >&#x2190;</button>
                 <button id="next" @click="click" >&#x2192;</button>
             </div>
-            <ul ref="projetList">
+            <ul ref="projectList">
                 <li v-for="project in visibleProjects" :key="project.id">
                 <h3> {{ project.title }}</h3>
+                <img id="pictureProject" :src="project.imgSrc" alt="apperçus de mes projets">
                 </li>
             </ul>
         </article>
@@ -106,9 +107,7 @@ li{
     padding-bottom: 35px;
 }
 
-.none{
-    display: none;
-}
+
 
 </style>
 

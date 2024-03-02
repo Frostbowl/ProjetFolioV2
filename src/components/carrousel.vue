@@ -43,7 +43,7 @@ h1{
     font-weight: bold;
 }
 
-.arrow button{
+#arrow button{
     font-size: 1.5em;
     cursor: pointer;
     font-weight: bold;
@@ -55,12 +55,12 @@ h1{
     border-radius: 15px;
 }
 
-.arrow button:hover{
+#arrow button:hover{
     background-color: #737373;
     border: 5px solid #5c5c5c;
 }
 
-.arrow{
+#arrow{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -1,7 +1,7 @@
 <template>
     <header>
         <section>
-        <a href="#"><img src="../assets/logoCM.jpg" alt="Logo MASCLET C" ></a>
+        <a href="#"><img src="../assets/img/logoCM.jpg" alt="Logo MASCLET C" ></a>
         <h1>Clément Masclet </h1>
         </section>
         <nav>
@@ -17,7 +17,7 @@
 <style scoped>
 
 header{
-    background-image: url("../assets/LWPL.jpg");
+    background-image: url(../assets/img/background.jpg);
     color: white;
     display: flex;
     flex-direction: column;

@@ -9,19 +9,19 @@
             <ul>
                 <li id="one" class="flex">
                     <h2>Mon C.V </h2><br>
-                    <img src="../assets/CV.png" alt="CV Masclet">
+                    <img src="../assets/img/CV.png" alt="CV Masclet">
                 </li>
                 <li id="two" class="none">
                     <h2>Déserts du monde</h2><br>
-                    <img src="../assets/Dsert.png" alt="site désert du monde">
+                    <img src="../assets/img/desert-du-monde.png" alt="site désert du monde">
                 </li>
                 <li id="three" class="none">
                     <h2>My HOME space</h2><br>
-                    <img src="../assets/homespace.png" alt="site My HOME space">
+                    <img src="../assets/img/homespace.png" alt="site My HOME space">
                 </li>
                 <li id="four" class="none">
                     <h2>Espace commentaire</h2><br>
-                    <img src="../assets/spacecom.png" alt="Un espace commentaire dynamique">
+                    <img src="../assets/img/projet-js-commentary-space.png" alt="Un espace commentaire dynamique">
                 </li>
             </ul>
         </article>

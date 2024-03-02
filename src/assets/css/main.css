@@ -1,0 +1,18 @@
+@import './base.css';
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  margin-right: 0;
+  background-image: url("../assets/LWPL.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white
+}

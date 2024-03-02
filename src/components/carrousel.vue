@@ -1,27 +1,43 @@
+<script setup>
+import { ref, onMounted } from "vue" 
+import { projects } from '/stores/dataImg.js'
+
+const dataTable = ref(projects)
+
+const visibleProjects = ref([])
+const startIndex = ref(0)
+const endIndex = ref(1)
+
+onMounted(() => {
+    visibleProjects.value = projects.slice(startIndex.value, endIndex.value + 1)
+})
+
+function click() {
+  startIndex.value = (startIndex.value + 2) % projects.length
+  endIndex.value = (startIndex.value + 1) % projects.length
+
+  if (endIndex.value >= projects.length) {
+    endIndex.value  =  0
+  }
+
+  visibleProjects.value = [projects[startIndex.value], projects[endIndex.value]]
+}
+
+
+</script>
+
+
 <template>
     <section id="projets">
         <h1>Mes projets</h1>
         <article>
             <div id="arrow">
-                <button id="previous">&#x2190;</button>
-                <button id="next">&#x2192;</button>
+                <button id="previous" @click="click" >&#x2190;</button>
+                <button id="next" @click="click" >&#x2192;</button>
             </div>
-            <ul>
-                <li id="one" class="flex">
-                    <h2>Mon C.V </h2><br>
-                    <img src="../assets/img/CV.png" alt="CV Masclet">
-                </li>
-                <li id="two" class="none">
-                    <h2>Déserts du monde</h2><br>
-                    <img src="../assets/img/desert-du-monde.png" alt="site désert du monde">
-                </li>
-                <li id="three" class="none">
-                    <h2>My HOME space</h2><br>
-                    <img src="../assets/img/homespace.png" alt="site My HOME space">
-                </li>
-                <li id="four" class="none">
-                    <h2>Espace commentaire</h2><br>
-                    <img src="../assets/img/projet-js-commentary-space.png" alt="Un espace commentaire dynamique">
+            <ul ref="projetList">
+                <li v-for="project in visibleProjects" :key="project.id">
+                <h3> {{ project.title }}</h3>
                 </li>
             </ul>
         </article>

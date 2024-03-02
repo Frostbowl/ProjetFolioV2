@@ -1,6 +1,6 @@
-import { ref } from "vue";
+import { ref } from "vue"
 
-export const projects = [
+    export const projects = [
     {
         id: ref(1),
         title: 'Mon CV',

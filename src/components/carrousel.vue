@@ -22,12 +22,12 @@ const projets = [
 ]
 
 const carrousel = ref([])
-const startI = ref(0)
+const startI = ref(1)
 const endI = ref(0)
 
 function click() {
     startI.value  = (startI.value + 1) % projets.length
-    endI.value =  (startI.value + 1) % projets.length
+    endI.value =  (startI.value - 1) % projets.length
 
     if (endI.vaue >= projets.length){
         endI.value = 0

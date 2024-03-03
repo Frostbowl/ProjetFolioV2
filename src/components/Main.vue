@@ -1,5 +1,4 @@
 <template>
-    <main >
         <section id="presentation" >
             <h1>Qui suis-je ?</h1><br>
                 <p>Passionné depuis toujours par l'informatique en général, j'ai développé au fil du temps une appétence non négligeable pour le code 
@@ -21,7 +20,6 @@
                     </div>
                 </div>
         </section>
-    </main>
 </template>
 
 <style scoped>

@@ -7,7 +7,7 @@
         <nav>
                 <a href="#">Accueil</a>
                 <a href="#presentation">Qui suis-je ?</a>
-                <a href="#projets">Mes projets</a>
+                <a href="#arrow">Mes projets</a>
                 <a href="#ContactMe">Me contacter</a>
         </nav>
     </header>
@@ -27,7 +27,6 @@ header{
     margin-right: 0;
     font-size: 1.4em;
     position: sticky;
-    overflow: auto;
     top: 0;
 
 }

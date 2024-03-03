@@ -1,28 +1,40 @@
 <script setup>
-import { ref, onMounted } from "vue" 
-import { projects } from "../stores/dataImg.js"
+import { ref } from "vue";
 
-const dataTable = ref(projects)
+const projets = [
+    {
+        id: ref(1),
+        title:'Mon CV',
+        imgSrc: '../src/assets/img/CV.png',
+    },{
+        id: ref(2),
+        title: 'Desert du monde',
+        imgSrc: '../src/assets/img/desert-du-monde.png',
+    },{
+        id: ref(3),
+        title: 'my HOME space',
+        imgSrc: '../src/assets/img/homespace.png',
+    },{
+        id: ref(4),
+        title: 'Projet Espace commentaire ',
+        imgSrc: '../src/assets/img/projet-js-commentary-space.png',
+    }
+]
 
-const visibleProjects = ref([])
-const startIndex = ref(0)
-const endIndex = ref(0)
-
-onMounted(() => {
-    visibleProjects.value = projects.slice(startIndex.value, endIndex.value + 1)
-})
+const carrousel = ref([])
+const startI = ref(0)
+const endI = ref(0)
 
 function click() {
-  startIndex.value = (startIndex.value + 1) % projects.length
-  endIndex.value = (startIndex.value + 1) % projects.length
+    startI.value  = (startI.value + 1) % projets.length
+    endI.value =  (startI.value + 1) % projets.length
 
-  if (endIndex.value >= projects.length) {
-    endIndex.value  =  0
-  }
+    if (endI.vaue >= projets.length){
+        endI.value = 0
+    }
 
-  visibleProjects.value = [projects[startIndex.value]]
+    carrousel.value = [projets[startI.value]]
 }
-
 
 </script>
 
@@ -35,10 +47,10 @@ function click() {
                 <button id="previous" @click="click" >&#x2190;</button>
                 <button id="next" @click="click" >&#x2192;</button>
             </div>
-            <ul ref="projectList">
-                <li v-for="project in visibleProjects" :key="project.id">
-                <h3> {{ project.title }}</h3>
-                <img id="pictureProject" :src="project.imgSrc" alt="apperçus de mes projets">
+            <ul ref="projetList">
+                <li v-for="projet in carrousel" :key="projets.id">
+                <h3> {{ projet.title }}</h3> <br>
+                <img id="pictureProjet" :src="projet.imgSrc" alt="apperçus de mes projets">
                 </li>
             </ul>
         </article>
@@ -55,7 +67,7 @@ section{
     background-color: black;
 }
 
-h1{
+h1, h3{
     text-align: center;
     font-weight: bold;
 }
@@ -96,10 +108,17 @@ li{
     list-style: none;
 }
 
-/*img{
-    max-width: 500px;
-    max-height: 750px;
-}*/
+img{
+    width: 450px;
+    height: 550px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+img:hover{
+    box-shadow: 15px 15px 30px whitesmoke;
+    cursor: pointer;
+}
 
 .flex{
     display: flex;

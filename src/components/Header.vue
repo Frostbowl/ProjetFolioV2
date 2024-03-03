@@ -1,13 +1,13 @@
 <template>
     <header>
         <section>
-        <a href="#"><img src="../assets/logoCM.jpg" alt="Logo MASCLET C" ></a>
+        <a href="#"><img src="../assets/img/logoCM.jpg" alt="Logo MASCLET C" ></a>
         <h1>Clément Masclet </h1>
         </section>
         <nav>
                 <a href="#">Accueil</a>
                 <a href="#presentation">Qui suis-je ?</a>
-                <a href="#projets">Mes projets</a>
+                <a href="#arrow">Mes projets</a>
                 <a href="#ContactMe">Me contacter</a>
         </nav>
     </header>
@@ -17,7 +17,7 @@
 <style scoped>
 
 header{
-    background-image: url("../assets/LWPL.jpg");
+    background-image: url(../assets/img/background.jpg);
     color: white;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,6 @@ header{
     margin-right: 0;
     font-size: 1.4em;
     position: sticky;
-    overflow: auto;
     top: 0;
 
 }

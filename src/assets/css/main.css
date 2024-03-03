@@ -11,7 +11,7 @@ body{
   flex-direction: column;
   margin-left: 0;
   margin-right: 0;
-  background-image: url("../assets/LWPL.jpg");
+  background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white

@@ -3,8 +3,8 @@
         <section>
             <p>Tous droits réservés, © MASCLET Clément 2024</p>
             <figure>
-                <a href="https://github.com/Frostbowl" target="_blank" ><img src="../assets/githublogo.png" alt="Logo GitHub"></a>
-                <a href="https://www.linkedin.com/in/cl%C3%A9ment-masclet-493263b0/" target="_blank" ><img src="../assets/téléchargement.png" alt="Logo LinkedIn"></a>
+                <a href="https://github.com/Frostbowl" target="_blank" ><img src="../assets/img/githublogo.png" alt="Logo GitHub"></a>
+                <a href="https://www.linkedin.com/in/cl%C3%A9ment-masclet-493263b0/" target="_blank" ><img src="../assets/img/linkedin-logo.png" alt="Logo LinkedIn"></a>
             </figure>
             <p>date de dernière mise à jour : <time datetime="2024-02-18">2024-02-18</time></p>
         </section>

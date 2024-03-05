@@ -1,59 +1,10 @@
-<script setup>
-import { ref } from "vue";
-import Modal from "./Modal.vue";
-
-
-const projets = [
-    {
-        id: ref(1),
-        title:'Mon CV',
-        imgSrc: '../src/assets/img/CV.png',
-        imgPart: ['../src/assets/img/cv-header.png', '../src/assets/img/cv-left.png', '../src/assets/img/cv-right.png',]
-    },{
-        id: ref(2),
-        title: 'Desert du monde',
-        imgSrc: '../src/assets/img/desert-du-monde.png',
-        imgPart: ['../src/assets/img/desert-header.png', '../src/assets/img/desert-left.png', '../src/assets/img/desert-right.png', '../src/assets/img/desert-footer.png']
-    },{
-        id: ref(3),
-        title: 'my HOME space',
-        imgSrc: '../src/assets/img/homespace.png',
-        imgPart: ['../src/assets/img/homespace-header.png', '../src/assets/img/homespace-main.png', '../src/assets/img/homespace-footer.png']
-    },{
-        id: ref(4),
-        title: 'Projet Espace commentaire ',
-        imgSrc: '../src/assets/img/projet-js-commentary-space.png',
-        imgPart: ['../src/assets/img/projet-js-comments-1.png', '../src/assets/img/projet-js-comments-2.png', '../src/assets/img/projet-js-form.png',]
-    }
-]
-
-const carrousel = ref([])
-const startI = ref(0)
-const endI = ref(1)
-
-
-
-function click() {
-    startI.value  = (startI.value + 1) % projets.length
-    endI.value =  (startI.value - 1) % projets.length
-
-    if (endI.value >= projets.length){
-        endI.value = 0
-    }
-
-    carrousel.value = [projets[startI.value]]
-}
-
-</script>
-
-
 <template>
     <section >
         <h1>Mes projets</h1>
         <article>
             <div id="arrow">
-                <button id="previous" @click="click" >&#x2190;</button>
-                <button id="next" @click="click" >&#x2192;</button>
+                <button id="previous" @click="prvsClick" >&#x2190;</button>
+                <button id="next" @click="nextClick" >&#x2192;</button>
             </div>
             <ul ref="projetList">
                 <li v-for="projet in carrousel" :key="projets.id">
@@ -64,6 +15,61 @@ function click() {
         </article>
     </section>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const projets = ([
+    {
+        id: ref(1),
+        title:'Mon CV',
+        imgSrc: '../src/assets/img/CV.png',
+    },{
+        id: ref(2),
+        title: 'Desert du monde',
+        imgSrc: '../src/assets/img/desert-du-monde.png',
+    },{
+        id: ref(3),
+        title: 'my HOME space',
+        imgSrc: '../src/assets/img/homespace.png',
+    },{
+        id: ref(4),
+        title: 'Projet Espace commentaire ',
+        imgSrc: '../src/assets/img/projet-js-commentary-space.png',
+    }
+])
+
+const carrousel = ref([])
+const startI = ref(0)
+const endI = ref(1)
+
+
+                //Fonction du carrousel d'images
+
+
+function nextClick() {
+    startI.value  = (startI.value + 1) % projets.length
+    endI.value =  (startI.value - 1) % projets.length
+
+    if (startI.value >= projets.length){
+        startI.value = 3
+    }
+
+    carrousel.value = [projets[startI.value]]
+}
+
+function prvsClick() {
+    startI.value  = (startI.value - 1) % projets.length
+    endI.value =  (startI.value + 1) % projets.length
+
+    if (startI.value >= projets.length){
+        startI.value = 0
+    }
+
+
+    carrousel.value = [projets[startI.value]]
+}
+</script>
 
 <style scoped>
 
@@ -135,10 +141,11 @@ img:hover{
 }
 
 li button{
-    width: 450px;
-    height: 550px;
+    width: 449px;
+    height: 549px;
     margin-bottom: 50px;
-    border-radius: 15px;
+    background-color: black;
+    border: black;
 
 }
 

@@ -1,3 +1,4 @@
+
 <template>
     <article id="ContactMe">
         <h1>Contactez-moi !</h1>
@@ -18,10 +19,7 @@
     <div id="statusMessage"></div>
 </template>
 
-<script setup>
 
-
-</script>
 
 <style scoped>
 

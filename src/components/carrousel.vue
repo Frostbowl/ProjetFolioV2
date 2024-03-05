@@ -1,10 +1,10 @@
 <template>
-    <section >
+    <section id="carrousel" >
         <h1>Mes projets</h1>
         <article>
             <div id="arrow">
-                <button id="previous" @click="prvsClick" >&#x2190;</button>
-                <button id="next" @click="nextClick" >&#x2192;</button>
+                <button id="previous" @click="Click" >&#x2190;</button>
+                <button id="next" @click="Click" >&#x2192;</button>
             </div>
             <ul ref="projetList">
                 <li v-for="projet in carrousel" :key="projets.id">
@@ -13,7 +13,7 @@
                 </li>
             </ul>
         </article>
-        <Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"></Modale>
+       <!-- <Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"/>-->
     </section>
 </template>
 
@@ -51,7 +51,7 @@ const endI = ref(1)
                 //Fonction du carrousel d'images
 
 
-function nextClick() {
+function Click() {
     startI.value  = (startI.value + 1) % projets.length
     endI.value =  (startI.value - 1) % projets.length
 
@@ -61,7 +61,7 @@ function nextClick() {
 
     carrousel.value = [projets[startI.value]]
 }
-
+/*
 function prvsClick() {
     startI.value  = (startI.value - 1) % projets.length
     endI.value =  (startI.value + 1) % projets.length
@@ -73,11 +73,12 @@ function prvsClick() {
 
     carrousel.value = [projets[startI.value]]
 }
+*/
 
 
 ////////Modal
 
-import Modale from "../assets/modal/Modale.vue";
+/*import Modale from "../assets/modal/Modale.vue";
 
 const isModalOpened = ref(false);
 
@@ -87,7 +88,7 @@ const openModal = ()=>{
 
 const closeModal = ()=>{
     isModalOpened.value = false;
-};
+};*/
 
 
 
@@ -96,6 +97,7 @@ const closeModal = ()=>{
 <style scoped>
 
 section{
+    scroll-margin-top: 200px;
     border: 3px solid white;
     border-radius: 15px;
     box-shadow: 0 0 30px whitesmoke;

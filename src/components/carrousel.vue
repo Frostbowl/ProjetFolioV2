@@ -9,14 +9,18 @@
             <ul ref="projetList">
                 <li v-for="projet in carrousel" :key="projets.id">
                 <h3> {{ projet.title }}</h3> <br>
-                <button id=""><img id="pictureProjet" :src="projet.imgSrc" alt="apperçus de mes projets"></button>
+                <button @click="openModal"><img id="pictureProjet" :src="projet.imgSrc" alt="apperçus de mes projets"></button>
                 </li>
             </ul>
         </article>
+        <Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"></Modale>
     </section>
 </template>
 
 <script setup>
+
+////Carrousel
+
 import { ref } from "vue";
 
 const projets = ([
@@ -69,6 +73,24 @@ function prvsClick() {
 
     carrousel.value = [projets[startI.value]]
 }
+
+
+////////Modal
+
+import Modale from "../assets/modal/Modale.vue";
+
+const isModalOpened = ref(false);
+
+const openModal = ()=>{
+    isModalOpened.value = true;
+};
+
+const closeModal = ()=>{
+    isModalOpened.value = false;
+};
+
+
+
 </script>
 
 <style scoped>

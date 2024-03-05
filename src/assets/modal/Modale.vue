@@ -2,12 +2,14 @@
 
 <div v-if="isOpen" class="overlay">
     <div class="container" >
-        <div id="prvs-btn" @click="modalPrvsClick">&#x2192;</div>
-        <div id="nxt-btn" @click="modalNxtClick">&#x2192;</div>
+        <div class="modalBtn">
+            <button id="prvs-btn" @click="modalPrvsClick">&#x2192;</button>
+            <button id="nxt-btn" @click="modalNxtClick">&#x2192;</button>
+        </div>
         <div class="content" ref="target" >
             <h2>{{ imgModal.title }}</h2>
             <img id="modalPicture" :src="imgModal.imgPart" alt="Une partie du projet présenté">
-            <div @click.stop="emit('modalClose')">Fermer</div>
+            <button @click.stop="emit('modal-close')" id="closeModal">Fermer</button>
         </div>
     </div>
 </div>
@@ -16,8 +18,9 @@
 
 <script setup>
 
-import { ref } from "vue";
-import {provide} from 'vue';
+import { defineProps, defineEmits, ref } from "vue";
+import { onClickOutside } from "@vueuse/core";
+
 
 const props = defineProps({
     isOpen: Boolean,
@@ -93,6 +96,59 @@ function modalPrvsClick() {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-wrapper
+.container{
+    border: 3px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 30px whitesmoke;
+    margin: 50px 20%;
+    background-color: black;
+}
+.modalBtn button{
+    font-size: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: #5c5c5c;
+    border: 5px solid #737373;
+    border-radius: 15px;
+}
+
+.modalBtn button:hover{
+    background-color: #737373;
+    border: 5px solid #5c5c5c;
+}
+
+.modalBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+h3{
+    text-align: center;
+    font-weight: bold;
+}
+
+img{
+    width: 450px;
+    height: 550px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+#closeModal{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 2em;
+    color: white;
+    background-color: #5c5c5c;
+    border: 5px solid #737373;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;  
+}
 
 </style>

@@ -3,17 +3,19 @@
         <h1>Mes projets</h1>
         <article>
             <div id="arrow">
-                <button id="previous" @click="Click" >&#x2190;</button>
+                <button id="previous" @click="Click">&#x2190;</button>
                 <button id="next" @click="Click" >&#x2192;</button>
             </div>
             <ul ref="projetList">
                 <li v-for="projet in carrousel" :key="projets.id">
-                <h3> {{ projet.title }}</h3> <br>
-                <button @click="openModal"><img id="pictureProjet" :src="projet.imgSrc" alt="apperçus de mes projets"></button>
+                    <h3> {{ projet.title }}</h3> <br>
+                    <button @click="openModal"><img id="pictureProjet" :src="projet.imgSrc" alt="apperçus de mes projets"></button>
+                </li>
+                <li>
+                    <!--<Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"/>-->
                 </li>
             </ul>
         </article>
-       <!-- <Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"/>-->
     </section>
 </template>
 
@@ -21,7 +23,7 @@
 
 ////Carrousel
 
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 
 const projets = ([
     {
@@ -48,7 +50,7 @@ const startI = ref(0)
 const endI = ref(1)
 
 
-                //Fonction du carrousel d'images
+////Fonction du carrousel d'images
 
 
 function Click() {
@@ -76,9 +78,13 @@ function prvsClick() {
 */
 
 
-////////Modal
+////Modal
 
-/*import Modale from "../assets/modal/Modale.vue";
+const props = defineProps({
+    isOpen: Boolean,
+});
+
+import Modale from "../assets/modal/Modale.vue";
 
 const isModalOpened = ref(false);
 
@@ -88,7 +94,7 @@ const openModal = ()=>{
 
 const closeModal = ()=>{
     isModalOpened.value = false;
-};*/
+};
 
 
 

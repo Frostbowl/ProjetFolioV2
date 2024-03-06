@@ -21,9 +21,7 @@
 import { defineProps, defineEmits, ref } from "vue";
 
 
-const props = defineProp({
-    isOpen: Boolean,
-});
+
 
 const emit = defineEmits(['modalClose']);
 

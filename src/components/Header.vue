@@ -9,7 +9,6 @@
                 <a href="#presentation">Qui suis-je ?</a>
                 <a href="#carrousel">Mes projets</a>
                 <a href="#ContactMe">Me contacter</a>
-                <a href="./WorkInProg.vue">Ne pas Cliquer (W.I.P)</a>
         </nav>
     </header>
 </template>
@@ -55,7 +54,7 @@ nav{
 }
 
 nav a{
-    width: 20%;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-content: center;

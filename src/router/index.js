@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import { WorkInProg } from "../components/WorkInProg.vue";
+import WorkInProg  from "../views/WorkInProg.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,7 +10,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },{
-      path: '*',
+      path: '/:catchAll(.*)',
       name: 'Error404',
       component: WorkInProg
     }

@@ -2,7 +2,7 @@
 <template>
     <article id="ContactMe">
         <h1>Contactez-moi !</h1>
-        <form class="Contact" >
+        <form class="Contact" @submit.prevent="submitForm" ref="contactForm" >
             <section class="info">
                 <label for="nom">Nom :</label>
                 <input  type="text" id="name" name="nom" required>
@@ -13,13 +13,24 @@
             </section>
             <label for="message"></label>
             <textarea name="message" id="message" cols="60" rows="15" required></textarea>
-            <button type="submit">Envoyer</button>
+            <button type="submit" >Envoyer</button>
         </form>
     </article>
-    <div id="statusMessage"></div>
 </template>
 
+<script setup>
 
+import { ref } from "vue";
+
+const contactForm = ref(null);
+
+const submitForm = (event) => {
+    event.preventDefault();
+    contactForm.value.reset();
+};
+
+
+</script>
 
 <style scoped>
 

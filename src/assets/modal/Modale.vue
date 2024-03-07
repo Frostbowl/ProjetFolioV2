@@ -6,7 +6,7 @@
             <button id="prvs-btn" @click="modalPrvsClick">&#x2192;</button>
             <button id="nxt-btn" @click="modalNxtClick">&#x2192;</button>
         </div>
-        <div class="content" ref="target" >
+        <div class="content" ref="imgModalList" >
             <h2>{{ imgModal.title }}</h2>
             <img id="modalPicture" :src="imgModal.imgPart" alt="Une partie du projet présenté">
             <button @click.stop="emit('modal-close')" id="closeModal">Fermer</button>
@@ -19,9 +19,7 @@
 <script setup>
 
 import { defineProps, defineEmits, ref } from "vue";
-
-
-
+//import { onClickOutside } from "vueuse/core";
 
 const emit = defineEmits(['modalClose']);
 
@@ -68,14 +66,14 @@ function modalNxtClick() {
 }
 
 function modalPrvsClick() {
-    startI.value  = (startI.value + 1) % projets.length
-    endI.value =  (startI.value - 1) % projets.length
+    startIndexModal.value  = (startIndexModal.value - 1) % imgPart.length
+    endIndexModal.value =  (startIndexModal.value + 1) % imgPart.length
 
-    if (endI.value >= projets.length){
-        endI.value = 0
+    if (endIndexModal.value >= imgPart.length){
+        endIndexModal.value = 0
     }
 
-    slider.value = [projets[startI.value]]
+    slider.value = [imgModal[startIndexModal.value]]
 }
 
 

@@ -12,9 +12,9 @@
                     <button @click="openModal"><img id="pictureProjet" :src="projet.imgSrc" alt="apperçus de mes projets"></button>
                 </li>
                 <li>
-                    <!--<Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"/>-->
                 </li>
             </ul>
+                    <!--<Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"/>-->
         </article>
     </section>
 </template>
@@ -88,7 +88,7 @@ import Modale from "../assets/modal/Modale.vue";
 
 const isModalOpened = ref(false);
 
-const openModal = ()=>{
+const openModal = (Modale)=>{
     isModalOpened.value = true;
 };
 

@@ -9,12 +9,12 @@
             <ul ref="projetList">
                 <li v-for="projet in carrousel" :key="projets.id">
                     <h3> {{ projet.title }}</h3> <br>
-                    <button @click="openModal"><img id="pictureProjet" :src="projet.imgSrc" alt="apperçus de mes projets"></button>
+                    <button ><img @click="openModal" id="pictureProjet" :src="projet.imgSrc" alt="apperçus de mes projets"></button>
                 </li>
                 <li>
                 </li>
             </ul>
-                    <!--<Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"/>-->
+                    <Modale :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal"/>
         </article>
     </section>
 </template>
@@ -63,7 +63,7 @@ function Click() {
 
     carrousel.value = [projets[startI.value]]
 }
-/*
+/*      ------En cours de réparation-------
 function prvsClick() {
     startI.value  = (startI.value - 1) % projets.length
     endI.value =  (startI.value + 1) % projets.length

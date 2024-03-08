@@ -9,7 +9,7 @@
         <div class="content" ref="imgModalList" >
             <h2>{{ imgModal.title }}</h2>
             <img id="modalPicture" :src="imgModal.imgPart" alt="Une partie du projet présenté">
-            <button @click.stop="emit('modal-close')" id="closeModal">Fermer</button>
+            <button @click.stop="emit('modalClose')" id="closeModal">Fermer</button>
         </div>
     </div>
 </div>
@@ -19,11 +19,11 @@
 <script setup>
 
 import { defineProps, defineEmits, ref } from "vue";
-import { onClickOutside } from "vueuse/core";
+import { onClickOutside } from "@vueuse/core";
 
 const emit = defineEmits(['modalClose']);
 
-const target = ref(null)
+const target = ref(imgModal)
 onClickOutside(target, ()=>emit('modalClose'))
 
 const imgModal = defineProps([

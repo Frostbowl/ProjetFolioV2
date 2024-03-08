@@ -7,7 +7,7 @@
         <nav>
                 <a href="#">Accueil</a>
                 <a href="#presentation">Qui suis-je ?</a>
-                <a href="#carrousel">Mes projets</a>
+                <a href="#MesProjets">Mes projets</a>
                 <a href="#ContactMe">Me contacter</a>
         </nav>
     </header>

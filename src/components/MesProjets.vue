@@ -1,0 +1,106 @@
+<script setup>
+import { ref } from "vue";
+import MonModal from "../assets/modal/MonModal.vue";
+const Projets = ref([
+    {
+        title:'Mon CV',
+        imgSrc: '../src/assets/img/CV.png',
+        UsedTech: 'HTML / CSS',
+        Repo: 'https://github.com/Frostbowl/CV_masclet.git',
+    },{
+        title:'Desert du monde',
+        imgSrc: '../src/assets/img/desert-du-monde.png',
+        UsedTech: 'HTML / CSS',
+        Repo: 'https://github.com/Frostbowl/D-serts-du-monde.git',
+    },{
+        title: 'my HOME space',
+        imgSrc: '../src/assets/img/homespace.png',
+        UsedTech: 'HTML / CSS',
+        Repo: 'https://github.com/Frostbowl/MyHomeSpace.git',
+    },{
+        title: 'Projet Espace commentaire ',
+        imgSrc: '../src/assets/img/projet-js-commentary-space.png',
+        UsedTech: 'HTML / CSS / JavaScript',
+        Repo: 'https://github.com/Frostbowl/Dynamiser-un-commentaire.git'
+    }
+])
+
+const itemToDisplay = ref(null);
+const isModalOpened = ref(false);
+const openModal = (e) => {
+    itemToDisplay.value = e.target.id;
+    isModalOpened.value = true;
+};
+const closeModal = () => {
+    isModalOpened.value = false;
+};
+
+</script>
+
+
+<template>
+
+<div id="MesProjets" >
+    <h2>Mes projets</h2>
+    <section v-for="(Projet, index) in Projets" >
+        <h3>{{ Projet.title }}</h3>
+        <button @click="openModal"><img :src="Projet.imgSrc" :id="index" alt="Une image de mon projet"></button>
+        <MonModal :to-display="Number(itemToDisplay)" :jobs="Projets" :isOpen="isModalOpened" @modal-close="closeModal" name="first-modal">
+            <template #header>
+            </template>
+            <template #content>
+            </template>
+            <template #footer>
+            </template>
+        </MonModal>
+    </section>
+</div>
+</template>
+
+
+<style scoped>
+
+div{
+    scroll-margin-top: 200px;
+    border: 3px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 30px whitesmoke;
+    margin: 50px 20%;
+    background-color: black;
+}
+
+h2, h3{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+img{
+    width: 450px;
+    height: 550px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+img:hover{
+    box-shadow: 15px 15px 30px whitesmoke;
+    cursor: pointer;
+}
+
+button{
+    width: 449px;
+    height: 549px;
+    margin-bottom: 50px;
+    background-color: black;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+</style>

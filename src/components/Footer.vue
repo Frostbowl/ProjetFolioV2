@@ -23,6 +23,8 @@ section{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 

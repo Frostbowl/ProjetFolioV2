@@ -28,6 +28,10 @@
     font-weight: bold;
 }
 
+section{
+    scroll-margin-top: 200px;
+}
+
 .skill{
     display: flex;
 }

@@ -7,7 +7,7 @@
         <nav>
                 <a href="#">Accueil</a>
                 <a href="#presentation">Qui suis-je ?</a>
-                <a href="#arrow">Mes projets</a>
+                <a href="#MesProjets">Mes projets</a>
                 <a href="#ContactMe">Me contacter</a>
         </nav>
     </header>
@@ -66,6 +66,7 @@ nav a{
 
 nav a:hover{
     background-color: rgba(255, 255, 255, 0.3);
+    text-decoration: underline;
 
 }
 

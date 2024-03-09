@@ -1,34 +1,49 @@
-
 <template>
     <article id="ContactMe">
         <h1>Contactez-moi !</h1>
-        <form class="Contact" @submit.prevent="submitForm" ref="contactForm" >
+        <form class="Contact" @submit.prevent="transmit()" ref="contactForm" >
             <section class="info">
                 <label for="nom">Nom :</label>
-                <input  type="text" id="name" name="nom" required>
+                <input  type="text" id="name" name="nom"  required>
                 <label for="prenom">Prénom :</label>
-                <input  type="text" name="prenom" id="prenom" required> <br><br>
+                <input  type="text" name="prenom" id="prenom"  required> <br><br>
                 <label for="objet">Objet du message :</label>
-                <input type="text" name="objet" id="objet" required>
+                <input type="text" name="objet" id="objet"  required>
             </section>
             <label for="message"></label>
-            <textarea name="message" id="message" cols="60" rows="15" required></textarea>
+            <textarea name="message" id="message" cols="60" rows="15"  required></textarea>
             <button type="submit" >Envoyer</button>
         </form>
     </article>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+const contactForm = ref(null)
 
-import { ref } from "vue";
+function transmit(){
+    (function() {
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    })();
 
-const contactForm = ref(null);
+    const content = {
+        to_name: "Clément",
+        from_name: document.querySelector('#name').value,
+        from_prenom: document.querySelector('#prenom').value,
+        objet: document.querySelector('#objet').value,
+        message: document.querySelector('#message').value,
+    }
 
-const submitForm = (event) => {
-    event.preventDefault();
-    contactForm.value.reset();
-};
-
+    
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICEID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATEID;
+    emailjs.send(serviceID, templateID, content)
+    .then( res => {
+        alert("Votre E-mail à été envoyé avec succès");
+        contactForm.value.reset();
+    })
+    .catch();
+}
 
 </script>
 
@@ -82,5 +97,10 @@ button{
 #send:hover{
     background-color: #737373;
     border: 5px solid #5c5c5c;
+}
+
+p{
+    padding-top: 10px;
+    font-weight: bold;
 }
 </style>

@@ -36,7 +36,6 @@ section{
     flex-direction: row;
     align-items: center;
     justify-content: stretch;
-    padding-top: auto;
     margin-top: auto;
     padding-bottom: 10px;
 }

@@ -3,12 +3,12 @@
         <h1>Contactez-moi !</h1>
         <form class="Contact" @submit.prevent="transmit()" ref="contactForm" >
             <section class="info">
-                <label for="nom">Nom :</label>
-                <input  type="text" id="name" name="nom"  required>
+                <label for="name">Nom :</label>
+                <input  type="text" id="name" name="name" required>
                 <label for="prenom">Prénom :</label>
-                <input  type="text" name="prenom" id="prenom"  required> <br><br>
+                <input  type="text" name="prenom" id="prenom" required> <br><br>
                 <label for="objet">Objet du message :</label>
-                <input type="text" name="objet" id="objet"  required>
+                <input type="text" name="objet" id="objet" required>
             </section>
             <label for="message"></label>
             <textarea name="message" id="message" cols="60" rows="15"  required></textarea>

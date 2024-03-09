@@ -42,7 +42,7 @@ onClickOutside(target, () => emit('modal-close'))
 .modal-mask {
     position: fixed;
     top: -50px;
-    left: -50;
+    left: -423px;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);

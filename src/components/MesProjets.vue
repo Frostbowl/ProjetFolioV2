@@ -7,21 +7,25 @@ const Projets = ref([
         imgSrc: '../src/assets/img/CV.png',
         UsedTech: 'HTML / CSS',
         Repo: 'https://github.com/Frostbowl/CV_masclet.git',
+        date: '08/02/2024'
     },{
         title:'Desert du monde',
         imgSrc: '../src/assets/img/desert-du-monde.png',
         UsedTech: 'HTML / CSS',
         Repo: 'https://github.com/Frostbowl/D-serts-du-monde.git',
+        date: '13/02/2024'
     },{
         title: 'my HOME space',
         imgSrc: '../src/assets/img/homespace.png',
         UsedTech: 'HTML / CSS',
         Repo: 'https://github.com/Frostbowl/MyHomeSpace.git',
+        date: '11/02/2024'
     },{
         title: 'Projet Espace commentaire ',
         imgSrc: '../src/assets/img/projet-js-commentary-space.png',
         UsedTech: 'HTML / CSS / JavaScript',
-        Repo: 'https://github.com/Frostbowl/Dynamiser-un-commentaire.git'
+        Repo: 'https://github.com/Frostbowl/Dynamiser-un-commentaire.git',
+        date: '19/02/2024'
     }
 ])
 

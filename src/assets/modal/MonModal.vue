@@ -26,6 +26,7 @@ onClickOutside(target, () => emit('modal-close'))
                     <img :src="jobs[toDisplay].imgSrc">
                     <p v-if="jobs[toDisplay].UsedTech">Technologies utilisées: {{ jobs[toDisplay].UsedTech }}</p>
                     <p>Lien GitHub: {{ jobs[toDisplay].Repo }}</p>
+                    <p>Date de création: {{ jobs[toDisplay].date }}</p>
                 </slot>
             </div>
             <div class="modal-footer">

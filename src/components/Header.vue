@@ -65,8 +65,11 @@ nav a{
 
 nav a:hover{
     background-color: rgba(255, 255, 255, 0.3);
-    text-decoration: underline;
 
+}
+
+nav a:active{
+    text-decoration: underline;
 }
 
 img{
@@ -78,5 +81,7 @@ img{
 img:hover{
     box-shadow: 0 0 40px white;
 }
+
+
 
 </style>

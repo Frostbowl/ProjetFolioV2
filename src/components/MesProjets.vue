@@ -74,7 +74,7 @@ const closeModal = () => {
 }
 
 #MesProjets{
-    scroll-margin-top: 170px;
+    scroll-margin-top: 10rem;
     border: 3px solid white;
     border-radius: 15px;
     box-shadow: 0 0 30px whitesmoke;

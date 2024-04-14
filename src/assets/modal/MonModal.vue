@@ -54,9 +54,10 @@ onClickOutside(target, () => emit('modal-close'))
 }
 
 .modal-wrapper {
+    margin-top: 3rem;
     position: fixed;
     width: 60%;
-    height: 100%;
+    height: 90%;
     max-width: 600px;
     background-color: black;
     border: #737373 solid 5px;

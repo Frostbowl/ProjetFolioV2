@@ -46,6 +46,7 @@ const closeModal = () => {
 
 <div id="MesProjets" >
     <h2>Mes projets</h2>
+    <div class="ProjetRow">
     <section v-for="(Projet, index) in Projets" >
         <h3>{{ Projet.title }}</h3>
         <button @click="openModal"><img :src="Projet.imgSrc" :id="index" alt="Une image de mon projet"></button>
@@ -58,14 +59,22 @@ const closeModal = () => {
             </template>
         </MonModal>
     </section>
+    </div>
 </div>
 </template>
 
 
 <style scoped>
 
-div{
-    scroll-margin-top: 200px;
+.ProjetRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#MesProjets{
+    scroll-margin-top: 170px;
     border: 3px solid white;
     border-radius: 15px;
     box-shadow: 0 0 30px whitesmoke;
@@ -81,8 +90,8 @@ h2, h3{
 }
 
 img{
-    width: 450px;
-    height: 550px;
+    width: 250px;
+    height: 350px;
     margin-bottom: 50px;
     border-radius: 15px;
 }
@@ -93,10 +102,11 @@ img:hover{
 }
 
 button{
-    width: 449px;
-    height: 549px;
+    width: 240px;
+    height: 340px;
     margin-bottom: 50px;
     background-color: black;
+    border-radius: 15px;
 }
 
 section{
@@ -105,6 +115,7 @@ section{
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-basis: 50%;
 }
 
 </style>

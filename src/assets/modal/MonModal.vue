@@ -40,21 +40,24 @@ onClickOutside(target, () => emit('modal-close'))
 </template>
 
 <style scoped>
+
 .modal-mask {
+    background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
-    top: -50px;
-    left: -423px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+	z-index: 99999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .modal-wrapper {
-    width: 80%;
-    max-width: 800px;
+    position: fixed;
+    width: 60%;
+    height: 100%;
+    max-width: 600px;
     background-color: black;
     border: #737373 solid 5px;
     border-radius: 15px;
@@ -64,9 +67,7 @@ onClickOutside(target, () => emit('modal-close'))
     align-items: center;
 }
 
-.modal-container {
-    padding: 20px;
-}
+
 
 .modal-header {
     color: white;
@@ -75,6 +76,7 @@ onClickOutside(target, () => emit('modal-close'))
     border-top-right-radius: 15px;
     font-weight: bold;
     font-size: 1.4em;
+    margin-top: 10px;
 }
 
 .modal-body {
@@ -86,6 +88,7 @@ onClickOutside(target, () => emit('modal-close'))
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .modal-footer button {
@@ -108,8 +111,8 @@ onClickOutside(target, () => emit('modal-close'))
 }
 
 img {
-    width: 570px;
-    height: 700px;
+    width: 370px;
+    height: 480px;
     border-radius: 15px;
 }
 

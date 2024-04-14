@@ -29,7 +29,7 @@
 }
 
 section{
-    scroll-margin-top: 200px;
+    scroll-margin-top: 170px;
 }
 
 .skill{

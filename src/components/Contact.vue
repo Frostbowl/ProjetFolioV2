@@ -50,6 +50,7 @@ function transmit(){
 <style scoped>
 
 article{
+    scroll-margin-top: 170px;
     border: 3px solid white;
     border-radius: 15px;
     box-shadow: 0 0 30px whitesmoke;
